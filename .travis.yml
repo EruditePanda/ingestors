@@ -10,12 +10,12 @@ services:
 before_install:
   - docker pull alephdata/test-base
   - docker build --cache-from alephdata/test-base
-  - docker run alephdata/test-base /bin/bash -c "cd /srv; nosetests -v --with-coverage --cover-package=ingestors;"
   - docker ps -a
 
 # command to run tests, e.g. python setup.py test
 # script: make lint coverage
-# script:
+script:
+  - docker run alephdata/test-base /bin/bash -c "cd /srv; nosetests -v --with-coverage --cover-package=ingestors;"
 #   - nosetests -v --with-coverage --cover-package=ingestors
 
 # after_success:
