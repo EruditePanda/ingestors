@@ -9,7 +9,7 @@ services:
 
 before_install:
   - docker pull alephdata/test-base
-  - docker build --cache-from alephdata/test-base
+  - docker build --cache-from alephdata/test-base .
   - docker ps -a
 
 # command to run tests, e.g. python setup.py test
