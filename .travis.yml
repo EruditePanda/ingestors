@@ -13,10 +13,8 @@ before_install:
   - docker ps -a
 
 # command to run tests, e.g. python setup.py test
-# script: make lint coverage
 script:
   - docker run alephdata/test-base /bin/bash -c "cd /srv; nosetests -v --with-coverage --cover-package=ingestors;"
-#   - nosetests -v --with-coverage --cover-package=ingestors
 
 # after_success:
 #   - coveralls
