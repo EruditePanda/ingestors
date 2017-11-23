@@ -37,13 +37,6 @@ ENV LANG='en_US.UTF-8' \
 
 # Install Python dependencies
 RUN pip install -q --upgrade pip && pip install -q --upgrade setuptools six nose coveralls
-COPY requirements_dev.txt /tmp/
-RUN pip install -r /tmp/requirements_dev.txt
-
-# Install ingestors
-COPY . /srv
-WORKDIR /srv
-RUN pip install -e .
 
 WORKDIR /srv
 
